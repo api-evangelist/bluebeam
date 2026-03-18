@@ -1,0 +1,19 @@
+aid: bluebeam
+url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/apis.yml
+apis:
+- aid: bluebeam:bluebeam-api
+  name: Bluebeam Revu API
+  tags:
+  - Construction
+  - Drawing
+  - Markup
+  - PDF
+  - Review
+  image: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/image.png
+  humanURL: https://www.bluebeam.com/
+  baseURL: https://api.bluebeam.example.com
+  properties:
+  - url: https://www.bluebeam.com/
+    type: Documentation
+  description: >-
+    Bluebeam provides drawing markup, review, and collaboration tools for the construction industry. APIs enable access to studio sessions, markup data, document annotations, and project drawing sets for AEC (Architecture, Engineering, Construction) workflows.
