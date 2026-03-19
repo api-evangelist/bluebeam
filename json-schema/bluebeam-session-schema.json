@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-schema/bluebeam-session-schema.json",
+  "title": "Bluebeam Studio Session",
+  "description": "JSON Schema for a Bluebeam Studio Session used for collaborative PDF document review and markup.",
+  "type": "object",
+  "required": ["id", "name", "status"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique Studio Session identifier"
+    },
+    "name": {
+      "type": "string",
+      "description": "Session display name"
+    },
+    "description": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["Active", "Finished", "Pending"]
+    },
+    "inviteUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL users can use to join the session"
+    },
+    "defaultPermission": {
+      "type": "string",
+      "enum": ["ReadOnly", "MarkupOnly", "FullAccess"],
+      "description": "Default permission level for new attendees"
+    },
+    "allowInvitations": {
+      "type": "boolean",
+      "description": "Whether attendees can invite others"
+    },
+    "restricted": {
+      "type": "boolean",
+      "description": "Whether the session requires explicit invitation"
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "User who created the session"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "finishedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "documentCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "userCount": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}

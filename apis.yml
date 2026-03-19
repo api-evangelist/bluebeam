@@ -23,6 +23,8 @@ apis:
     type: Authentication
   - url: https://support.bluebeam.com/developer/studio-session-guide.html
     type: Reference
+  - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/openapi/bluebeam-studio-openapi.yml
+    type: OpenAPI
   description: >-
     The Bluebeam Studio API enables programmatic access to Studio Sessions for document collaboration, markup management, and PDF review workflows. OAuth 2.0 REST APIs allow third-party applications to create and manage studio sessions, retrieve markup data, and integrate document annotations into AEC construction workflows.
 
@@ -69,6 +71,12 @@ common:
     type: Support
   - url: https://support.bluebeam.com/integrations/integrations-hub.html
     type: Documentation
+  - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/openapi/bluebeam-studio-openapi.yml
+    type: OpenAPI
+  - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-schema/bluebeam-session-schema.json
+    type: JSONSchema
+  - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-ld/bluebeam-context.jsonld
+    type: JSONLDContext
 
 maintainers:
 - name: Kin Lane

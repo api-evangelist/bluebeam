@@ -1,0 +1,67 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "bb": "https://api.bluebeam.com/studio/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Session": {
+      "@id": "schema:Event",
+      "@context": {
+        "id": {"@id": "schema:identifier"},
+        "name": {"@id": "schema:name"},
+        "description": {"@id": "schema:description"},
+        "status": {"@id": "bb:sessionStatus"},
+        "inviteUrl": {"@id": "schema:url", "@type": "@id"},
+        "defaultPermission": {"@id": "bb:defaultPermission"},
+        "allowInvitations": {"@id": "bb:allowInvitations", "@type": "xsd:boolean"},
+        "restricted": {"@id": "bb:restricted", "@type": "xsd:boolean"},
+        "createdBy": {"@id": "schema:organizer"},
+        "createdAt": {"@id": "schema:startDate", "@type": "xsd:dateTime"},
+        "finishedAt": {"@id": "schema:endDate", "@type": "xsd:dateTime"},
+        "documentCount": {"@id": "bb:documentCount", "@type": "xsd:integer"},
+        "userCount": {"@id": "schema:attendeeCount", "@type": "xsd:integer"}
+      }
+    },
+
+    "Document": {
+      "@id": "schema:DigitalDocument",
+      "@context": {
+        "id": {"@id": "schema:identifier"},
+        "sessionId": {"@id": "bb:sessionId"},
+        "name": {"@id": "schema:name"},
+        "pageCount": {"@id": "schema:numberOfPages", "@type": "xsd:integer"},
+        "fileSize": {"@id": "schema:contentSize", "@type": "xsd:integer"},
+        "uploadedBy": {"@id": "schema:author"},
+        "uploadedAt": {"@id": "schema:uploadDate", "@type": "xsd:dateTime"},
+        "markupCount": {"@id": "bb:markupCount", "@type": "xsd:integer"}
+      }
+    },
+
+    "Markup": {
+      "@id": "schema:Comment",
+      "@context": {
+        "id": {"@id": "schema:identifier"},
+        "documentId": {"@id": "bb:documentId"},
+        "pageNumber": {"@id": "bb:pageNumber", "@type": "xsd:integer"},
+        "markupType": {"@id": "bb:markupType"},
+        "subject": {"@id": "schema:headline"},
+        "comment": {"@id": "schema:text"},
+        "createdBy": {"@id": "schema:author"},
+        "createdAt": {"@id": "schema:dateCreated", "@type": "xsd:dateTime"},
+        "status": {"@id": "bb:markupStatus"}
+      }
+    },
+
+    "SessionUser": {
+      "@id": "schema:Person",
+      "@context": {
+        "id": {"@id": "schema:identifier"},
+        "email": {"@id": "schema:email"},
+        "name": {"@id": "schema:name"},
+        "permission": {"@id": "bb:sessionPermission"},
+        "status": {"@id": "bb:attendeeStatus"}
+      }
+    }
+  }
+}
