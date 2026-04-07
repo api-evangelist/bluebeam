@@ -20,12 +20,12 @@ security:
   - oauth2: []
 
 tags:
-  - name: Sessions
-    description: Studio Session management
   - name: Documents
     description: Document management within sessions
   - name: Markups
     description: Markup and annotation access
+  - name: Sessions
+    description: Studio Session management
   - name: Users
     description: Session user management
 

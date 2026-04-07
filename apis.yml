@@ -1,33 +1,29 @@
 aid: bluebeam
-url: 
-  https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/apis.yml
 apis:
   - aid: bluebeam:bluebeam-studio-api
     name: Bluebeam Studio API
     tags:
+      - Collaboration
       - Construction
       - Drawing
       - Markup
       - PDF
       - Review
       - Studio
-      - Collaboration
-    image: 
-      https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/image.png
+    image: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/image.png
     humanURL: https://developers.bluebeam.com/
     baseURL: https://api.bluebeam.com
     properties:
       - url: https://developers.bluebeam.com/
         type: Documentation
-      - url: 
-          https://support.bluebeam.com/developer/getting-started-dev-portal.html
+      - url: https://support.bluebeam.com/developer/getting-started-dev-portal.html
         type: GettingStarted
       - url: https://support.bluebeam.com/developer/authentication-guide.html
         type: Authentication
       - url: https://support.bluebeam.com/developer/studio-session-guide.html
         type: Reference
-      - url: 
-          https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/openapi/bluebeam-studio-openapi.yml
+      - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/openapi/bluebeam-studio-openapi.yml
         type: OpenAPI
     description: >-
       The Bluebeam Studio API enables programmatic access to Studio Sessions for document
@@ -40,19 +36,17 @@ apis:
     tags:
       - Construction
       - Drawing
-      - Studio Prime
       - Markup
       - PDF
       - Project Management
-    image: 
-      https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/image.png
+      - Studio Prime
+    image: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/image.png
     humanURL: https://developers.bluebeam.com/
     baseURL: https://api.bluebeam.com
     properties:
       - url: https://support.bluebeam.com/integrations/develop-integrations.html
         type: Documentation
-      - url: 
-          https://support.bluebeam.com/developer/getting-started-dev-portal.html
+      - url: https://support.bluebeam.com/developer/getting-started-dev-portal.html
         type: GettingStarted
       - url: https://support.bluebeam.com/developer/authentication-guide.html
         type: Authentication
@@ -83,14 +77,11 @@ common:
     type: Support
   - url: https://support.bluebeam.com/integrations/integrations-hub.html
     type: Documentation
-  - url: 
-      https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/openapi/bluebeam-studio-openapi.yml
+  - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/openapi/bluebeam-studio-openapi.yml
     type: OpenAPI
-  - url: 
-      https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-schema/bluebeam-session-schema.json
+  - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-schema/bluebeam-session-schema.json
     type: JSONSchema
-  - url: 
-      https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-ld/bluebeam-context.jsonld
+  - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-ld/bluebeam-context.jsonld
     type: JSONLDContext
 
 maintainers:
