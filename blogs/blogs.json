@@ -1,0 +1,13 @@
+{
+  "repo": "bluebeam",
+  "feeds": [
+    {
+      "source": "https://blog.bluebeam.com/",
+      "feed_url": "https://blog.bluebeam.com/feed/",
+      "saved": 10,
+      "title": "Built | The Bluebeam Blog"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:23:59Z"
+}
