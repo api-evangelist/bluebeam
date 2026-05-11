@@ -84,6 +84,30 @@ common:
   - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-ld/bluebeam-context.jsonld
     type: JSONLDContext
 
+  - type: Integrations
+    url: https://www.bluebeam.com/product/integrations/
+integrations:
+  - name: Bluebeam Construction Software
+  - name: Open Mobile Navigation
+  - name: Close Mobile Navigation
+  - name: mob-hero-icons-1
+  - name: mob-hero-icons-2
+  - name: col-1
+  - name: col-2
+  - name: col-3
+  - name: Company Logos
+  - name: Permitting
+  - name: Construction Management
+  - name: Design Review
+  - name: Document Management
+  - name: PDF Creation
+  - name: Cut out of a laptop
+  - name: Get it on Google Play
+  - name: Facebook
+  - name: LinkedIn
+  - name: Youtube
+  - name: Instagram
+  - name: Bluebeam Inc.
 maintainers:
   - name: Kin Lane
     email: kin@apievangelist.com
