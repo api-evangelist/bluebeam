@@ -70,7 +70,7 @@ common:
   - url: https://support.bluebeam.com/developer/authentication-guide.html
     type: Authentication
   - url: https://status.bluebeam.com/
-    type: Status
+    type: StatusPage
   - url: https://blog.bluebeam.com/
     type: Blog
   - url: https://community.bluebeam.com/
