@@ -1,119 +1,119 @@
 aid: bluebeam
 url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/apis.yml
 apis:
-  - aid: bluebeam:bluebeam-studio-api
-    name: Bluebeam Studio API
-    tags:
-      - Collaboration
-      - Construction
-      - Drawing
-      - Markup
-      - PDF
-      - Review
-      - Studio
-    image: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/image.png
-    humanURL: https://developers.bluebeam.com/
-    baseURL: https://api.bluebeam.com
-    properties:
-      - url: https://developers.bluebeam.com/
-        type: Documentation
-      - url: https://support.bluebeam.com/developer/getting-started-dev-portal.html
-        type: GettingStarted
-      - url: https://support.bluebeam.com/developer/authentication-guide.html
-        type: Authentication
-      - url: https://support.bluebeam.com/developer/studio-session-guide.html
-        type: Reference
-      - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/openapi/bluebeam-studio-openapi.yml
-        type: OpenAPI
-    description: >-
-      The Bluebeam Studio API enables programmatic access to Studio Sessions for document
-      collaboration, markup management, and PDF review workflows. OAuth 2.0 REST APIs
-      allow third-party applications to create and manage studio sessions, retrieve
-      markup data, and integrate document annotations into AEC construction workflows.
-
-  - aid: bluebeam:bluebeam-studio-prime-api
-    name: Bluebeam Studio Prime Integration API
-    tags:
-      - Construction
-      - Drawing
-      - Markup
-      - PDF
-      - Project Management
-      - Studio Prime
-    image: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/image.png
-    humanURL: https://developers.bluebeam.com/
-    baseURL: https://api.bluebeam.com
-    properties:
-      - url: https://support.bluebeam.com/integrations/develop-integrations.html
-        type: Documentation
-      - url: https://support.bluebeam.com/developer/getting-started-dev-portal.html
-        type: GettingStarted
-      - url: https://support.bluebeam.com/developer/authentication-guide.html
-        type: Authentication
-      - url: https://support.bluebeam.com/integrations/int-overview.html
-        type: Documentation
-    description: >-
-      The Bluebeam Studio Prime Integration API leverages the Bluebeam Public API
-      to enable third-party application integrations with Studio Prime. APIs support
-      programmatic access to project drawing sets, session management, and markup
-      synchronization for construction project management platforms.
-
-common:
-  - url: https://www.bluebeam.com
-    type: Website
+- aid: bluebeam:bluebeam-studio-api
+  name: Bluebeam Studio API
+  tags:
+  - Collaboration
+  - Construction
+  - Drawing
+  - Markup
+  - PDF
+  - Review
+  - Studio
+  image: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/image.png
+  humanURL: https://developers.bluebeam.com/
+  baseURL: https://api.bluebeam.com
+  properties:
   - url: https://developers.bluebeam.com/
-    type: Portal
+    type: Documentation
+  - url: https://support.bluebeam.com/developer/getting-started-dev-portal.html
+    type: GettingStarted
+  - url: https://support.bluebeam.com/developer/authentication-guide.html
+    type: Authentication
+  - url: https://support.bluebeam.com/developer/studio-session-guide.html
+    type: Reference
+  - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/openapi/bluebeam-studio-openapi.yml
+    type: OpenAPI
+  - type: NaftikoCapability
+    url: capabilities/studio-documents.yaml
+  - type: NaftikoCapability
+    url: capabilities/studio-markups.yaml
+  - type: NaftikoCapability
+    url: capabilities/studio-sessions.yaml
+  - type: NaftikoCapability
+    url: capabilities/studio-users.yaml
+  description: The Bluebeam Studio API enables programmatic access to Studio Sessions for document collaboration, markup management,
+    and PDF review workflows. OAuth 2.0 REST APIs allow third-party applications to create and manage studio sessions, retrieve
+    markup data, and integrate document annotations into AEC construction workflows.
+- aid: bluebeam:bluebeam-studio-prime-api
+  name: Bluebeam Studio Prime Integration API
+  tags:
+  - Construction
+  - Drawing
+  - Markup
+  - PDF
+  - Project Management
+  - Studio Prime
+  image: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/image.png
+  humanURL: https://developers.bluebeam.com/
+  baseURL: https://api.bluebeam.com
+  properties:
   - url: https://support.bluebeam.com/integrations/develop-integrations.html
     type: Documentation
   - url: https://support.bluebeam.com/developer/getting-started-dev-portal.html
     type: GettingStarted
   - url: https://support.bluebeam.com/developer/authentication-guide.html
     type: Authentication
-  - url: https://status.bluebeam.com/
-    type: StatusPage
-  - url: https://blog.bluebeam.com/
-    type: Blog
-  - url: https://community.bluebeam.com/
-    type: Support
-  - url: https://support.bluebeam.com/integrations/integrations-hub.html
+  - url: https://support.bluebeam.com/integrations/int-overview.html
     type: Documentation
-  - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/openapi/bluebeam-studio-openapi.yml
-    type: OpenAPI
-  - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-schema/bluebeam-session-schema.json
-    type: JSONSchema
-  - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-ld/bluebeam-context.jsonld
-    type: JSONLDContext
-
-  - type: Integrations
-    url: https://www.bluebeam.com/product/integrations/
+  description: The Bluebeam Studio Prime Integration API leverages the Bluebeam Public API to enable third-party application
+    integrations with Studio Prime. APIs support programmatic access to project drawing sets, session management, and markup
+    synchronization for construction project management platforms.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/bluebeam-software
+- url: https://www.bluebeam.com
+  type: Website
+- url: https://developers.bluebeam.com/
+  type: Portal
+- url: https://support.bluebeam.com/integrations/develop-integrations.html
+  type: Documentation
+- url: https://support.bluebeam.com/developer/getting-started-dev-portal.html
+  type: GettingStarted
+- url: https://support.bluebeam.com/developer/authentication-guide.html
+  type: Authentication
+- url: https://status.bluebeam.com/
+  type: StatusPage
+- url: https://blog.bluebeam.com/
+  type: Blog
+- url: https://community.bluebeam.com/
+  type: Support
+- url: https://support.bluebeam.com/integrations/integrations-hub.html
+  type: Documentation
+- url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/openapi/bluebeam-studio-openapi.yml
+  type: OpenAPI
+- url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-schema/bluebeam-session-schema.json
+  type: JSONSchema
+- url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-ld/bluebeam-context.jsonld
+  type: JSONLDContext
+- type: Integrations
+  url: https://www.bluebeam.com/product/integrations/
 integrations:
-  - name: Bluebeam Construction Software
-  - name: Open Mobile Navigation
-  - name: Close Mobile Navigation
-  - name: mob-hero-icons-1
-  - name: mob-hero-icons-2
-  - name: col-1
-  - name: col-2
-  - name: col-3
-  - name: Company Logos
-  - name: Permitting
-  - name: Construction Management
-  - name: Design Review
-  - name: Document Management
-  - name: PDF Creation
-  - name: Cut out of a laptop
-  - name: Get it on Google Play
-  - name: Facebook
-  - name: LinkedIn
-  - name: Youtube
-  - name: Instagram
-  - name: Bluebeam Inc.
+- name: Bluebeam Construction Software
+- name: Open Mobile Navigation
+- name: Close Mobile Navigation
+- name: mob-hero-icons-1
+- name: mob-hero-icons-2
+- name: col-1
+- name: col-2
+- name: col-3
+- name: Company Logos
+- name: Permitting
+- name: Construction Management
+- name: Design Review
+- name: Document Management
+- name: PDF Creation
+- name: Cut out of a laptop
+- name: Get it on Google Play
+- name: Facebook
+- name: LinkedIn
+- name: Youtube
+- name: Instagram
+- name: Bluebeam Inc.
 maintainers:
-  - name: Kin Lane
-    email: kin@apievangelist.com
-
-modified: '2026-04-21'
-description: >-
-  Bluebeam develops smart, simple project efficiency and collaboration software for
-  design and construction professionals worldwide, with its flagship Bluebeam Revu
-  PDF markup and collaboration tool.
+- name: Kin Lane
+  email: kin@apievangelist.com
+modified: '2026-05-19'
+description: Bluebeam develops smart, simple project efficiency and collaboration software for design and construction professionals
+  worldwide, with its flagship Bluebeam Revu PDF markup and collaboration tool.

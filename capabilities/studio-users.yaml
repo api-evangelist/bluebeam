@@ -1,0 +1,120 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Bluebeam Studio API — Users
+  description: 'Bluebeam Studio API — Users. 2 operations. Lead operation: List session users/attendees. Self-contained Naftiko
+    capability covering one Bluebeam business surface.'
+  tags:
+  - Bluebeam
+  - Users
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BLUEBEAM_API_KEY: BLUEBEAM_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: studio-users
+    baseUri: https://api.bluebeam.com
+    description: Bluebeam Studio API — Users business capability. Self-contained, no shared references.
+    resources:
+    - name: studio-v1-sessions-sessionId-users
+      path: /studio/v1/sessions/{sessionId}/users
+      operations:
+      - name: listsessionusers
+        method: GET
+        description: List session users/attendees
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          required: true
+      - name: invitesessionuser
+        method: POST
+        description: Invite user to session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.BLUEBEAM_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: studio-users-rest
+    port: 8080
+    description: REST adapter for Bluebeam Studio API — Users. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/studio/v1/sessions/{sessionid}/users
+      name: studio-v1-sessions-sessionid-users
+      description: REST surface for studio-v1-sessions-sessionId-users.
+      operations:
+      - method: GET
+        name: listsessionusers
+        description: List session users/attendees
+        call: studio-users.listsessionusers
+        with:
+          sessionId: rest.sessionId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: invitesessionuser
+        description: Invite user to session
+        call: studio-users.invitesessionuser
+        with:
+          sessionId: rest.sessionId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: studio-users-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Bluebeam Studio API — Users. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-session-users-attendees
+      description: List session users/attendees
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: studio-users.listsessionusers
+      with:
+        sessionId: tools.sessionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: invite-user-session
+      description: Invite user to session
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: studio-users.invitesessionuser
+      with:
+        sessionId: tools.sessionId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

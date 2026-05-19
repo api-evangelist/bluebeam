@@ -1,0 +1,120 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Bluebeam Studio API — Documents
+  description: 'Bluebeam Studio API — Documents. 2 operations. Lead operation: List session documents. Self-contained Naftiko
+    capability covering one Bluebeam business surface.'
+  tags:
+  - Bluebeam
+  - Documents
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BLUEBEAM_API_KEY: BLUEBEAM_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: studio-documents
+    baseUri: https://api.bluebeam.com
+    description: Bluebeam Studio API — Documents business capability. Self-contained, no shared references.
+    resources:
+    - name: studio-v1-sessions-sessionId-documents
+      path: /studio/v1/sessions/{sessionId}/documents
+      operations:
+      - name: listsessiondocuments
+        method: GET
+        description: List session documents
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          required: true
+      - name: uploadsessiondocument
+        method: POST
+        description: Upload document to session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.BLUEBEAM_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: studio-documents-rest
+    port: 8080
+    description: REST adapter for Bluebeam Studio API — Documents. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/studio/v1/sessions/{sessionid}/documents
+      name: studio-v1-sessions-sessionid-documents
+      description: REST surface for studio-v1-sessions-sessionId-documents.
+      operations:
+      - method: GET
+        name: listsessiondocuments
+        description: List session documents
+        call: studio-documents.listsessiondocuments
+        with:
+          sessionId: rest.sessionId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: uploadsessiondocument
+        description: Upload document to session
+        call: studio-documents.uploadsessiondocument
+        with:
+          sessionId: rest.sessionId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: studio-documents-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Bluebeam Studio API — Documents. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-session-documents
+      description: List session documents
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: studio-documents.listsessiondocuments
+      with:
+        sessionId: tools.sessionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: upload-document-session
+      description: Upload document to session
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: studio-documents.uploadsessiondocument
+      with:
+        sessionId: tools.sessionId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

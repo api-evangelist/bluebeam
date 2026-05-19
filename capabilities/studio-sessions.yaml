@@ -1,0 +1,247 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Bluebeam Studio API — Sessions
+  description: 'Bluebeam Studio API — Sessions. 5 operations. Lead operation: List sessions. Self-contained Naftiko capability
+    covering one Bluebeam business surface.'
+  tags:
+  - Bluebeam
+  - Sessions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BLUEBEAM_API_KEY: BLUEBEAM_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: studio-sessions
+    baseUri: https://api.bluebeam.com
+    description: Bluebeam Studio API — Sessions business capability. Self-contained, no shared references.
+    resources:
+    - name: studio-v1-sessions
+      path: /studio/v1/sessions
+      operations:
+      - name: listsessions
+        method: GET
+        description: List sessions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: status
+          in: query
+          type: string
+          description: Filter by session status
+        - name: limit
+          in: query
+          type: integer
+        - name: offset
+          in: query
+          type: integer
+      - name: createsession
+        method: POST
+        description: Create a Studio Session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: studio-v1-sessions-sessionId
+      path: /studio/v1/sessions/{sessionId}
+      operations:
+      - name: getsession
+        method: GET
+        description: Get session by ID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          required: true
+      - name: updatesession
+        method: PATCH
+        description: Update session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: studio-v1-sessions-sessionId-finish
+      path: /studio/v1/sessions/{sessionId}/finish
+      operations:
+      - name: finishsession
+        method: POST
+        description: Finish/close a session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.BLUEBEAM_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: studio-sessions-rest
+    port: 8080
+    description: REST adapter for Bluebeam Studio API — Sessions. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/studio/v1/sessions
+      name: studio-v1-sessions
+      description: REST surface for studio-v1-sessions.
+      operations:
+      - method: GET
+        name: listsessions
+        description: List sessions
+        call: studio-sessions.listsessions
+        with:
+          status: rest.status
+          limit: rest.limit
+          offset: rest.offset
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createsession
+        description: Create a Studio Session
+        call: studio-sessions.createsession
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/studio/v1/sessions/{sessionid}
+      name: studio-v1-sessions-sessionid
+      description: REST surface for studio-v1-sessions-sessionId.
+      operations:
+      - method: GET
+        name: getsession
+        description: Get session by ID
+        call: studio-sessions.getsession
+        with:
+          sessionId: rest.sessionId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updatesession
+        description: Update session
+        call: studio-sessions.updatesession
+        with:
+          sessionId: rest.sessionId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/studio/v1/sessions/{sessionid}/finish
+      name: studio-v1-sessions-sessionid-finish
+      description: REST surface for studio-v1-sessions-sessionId-finish.
+      operations:
+      - method: POST
+        name: finishsession
+        description: Finish/close a session
+        call: studio-sessions.finishsession
+        with:
+          sessionId: rest.sessionId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: studio-sessions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Bluebeam Studio API — Sessions. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-sessions
+      description: List sessions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: studio-sessions.listsessions
+      with:
+        status: tools.status
+        limit: tools.limit
+        offset: tools.offset
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-studio-session
+      description: Create a Studio Session
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: studio-sessions.createsession
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-session-id
+      description: Get session by ID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: studio-sessions.getsession
+      with:
+        sessionId: tools.sessionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-session
+      description: Update session
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: studio-sessions.updatesession
+      with:
+        sessionId: tools.sessionId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: finish-close-session
+      description: Finish/close a session
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: studio-sessions.finishsession
+      with:
+        sessionId: tools.sessionId
+      outputParameters:
+      - type: object
+        mapping: $.

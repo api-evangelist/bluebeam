@@ -1,0 +1,96 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Bluebeam Studio API — Markups
+  description: 'Bluebeam Studio API — Markups. 1 operations. Lead operation: Get document markups. Self-contained Naftiko
+    capability covering one Bluebeam business surface.'
+  tags:
+  - Bluebeam
+  - Markups
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BLUEBEAM_API_KEY: BLUEBEAM_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: studio-markups
+    baseUri: https://api.bluebeam.com
+    description: Bluebeam Studio API — Markups business capability. Self-contained, no shared references.
+    resources:
+    - name: studio-v1-sessions-sessionId-documents-documentId-markups
+      path: /studio/v1/sessions/{sessionId}/documents/{documentId}/markups
+      operations:
+      - name: getdocumentmarkups
+        method: GET
+        description: Get document markups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          required: true
+        - name: documentId
+          in: path
+          type: string
+          required: true
+        - name: pageNumber
+          in: query
+          type: integer
+          description: Filter markups by page number
+        - name: markupType
+          in: query
+          type: string
+    authentication:
+      type: bearer
+      token: '{{env.BLUEBEAM_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: studio-markups-rest
+    port: 8080
+    description: REST adapter for Bluebeam Studio API — Markups. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/studio/v1/sessions/{sessionid}/documents/{documentid}/markups
+      name: studio-v1-sessions-sessionid-documents-documentid-markups
+      description: REST surface for studio-v1-sessions-sessionId-documents-documentId-markups.
+      operations:
+      - method: GET
+        name: getdocumentmarkups
+        description: Get document markups
+        call: studio-markups.getdocumentmarkups
+        with:
+          sessionId: rest.sessionId
+          documentId: rest.documentId
+          pageNumber: rest.pageNumber
+          markupType: rest.markupType
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: studio-markups-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Bluebeam Studio API — Markups. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: get-document-markups
+      description: Get document markups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: studio-markups.getdocumentmarkups
+      with:
+        sessionId: tools.sessionId
+        documentId: tools.documentId
+        pageNumber: tools.pageNumber
+        markupType: tools.markupType
+      outputParameters:
+      - type: object
+        mapping: $.
