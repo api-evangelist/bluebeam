@@ -1,0 +1,281 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bluebeam Studio API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://authserver.bluebeam.com/auth/oauth/authorize",
+      "accessTokenUrl": "https://authserver.bluebeam.com/auth/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bluebeam.com/studio/v1/sessions",
+            "params": [
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Filter by session status"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve a list of Studio Sessions the authenticated user has access to."
+        },
+        {
+          "info": {
+            "name": "Create a Studio Session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bluebeam.com/studio/v1/sessions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Bluebeam Studio Session for collaborative document review and markup. Sessions can be configured with attendees, invitation settings, and file upload permissions."
+        },
+        {
+          "info": {
+            "name": "Get session by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bluebeam.com/studio/v1/sessions/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve full details for a specific Studio Session."
+        },
+        {
+          "info": {
+            "name": "Update session",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.bluebeam.com/studio/v1/sessions/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update session settings such as name, status, or invitation permissions."
+        },
+        {
+          "info": {
+            "name": "Finish/close a session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bluebeam.com/studio/v1/sessions/:sessionId/finish",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Close a Studio Session, preventing further markups from attendees."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List session documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bluebeam.com/studio/v1/sessions/:sessionId/documents",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve all documents uploaded to a Studio Session."
+        },
+        {
+          "info": {
+            "name": "Upload document to session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bluebeam.com/studio/v1/sessions/:sessionId/documents",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "fileName",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload a PDF document to a Studio Session."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Markups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get document markups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bluebeam.com/studio/v1/sessions/:sessionId/documents/:documentId/markups",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "documentId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageNumber",
+                "value": "",
+                "type": "query",
+                "description": "Filter markups by page number"
+              },
+              {
+                "name": "markupType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve all markups (annotations, comments, stamps) from a document in a Studio Session."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List session users/attendees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bluebeam.com/studio/v1/sessions/:sessionId/users",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve all users invited to or attending a Studio Session."
+        },
+        {
+          "info": {
+            "name": "Invite user to session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bluebeam.com/studio/v1/sessions/:sessionId/users",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Invite a user to a Studio Session by email address."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

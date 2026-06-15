@@ -1,0 +1,1401 @@
+{
+  "item": [
+    {
+      "id": "bc015ee1-b278-4421-b69f-6099d8ffd016",
+      "name": "Documents",
+      "description": {
+        "content": "Document management within sessions",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "89dc187d-0151-474f-8c06-b4b500b22a2f",
+          "name": "List session documents",
+          "request": {
+            "name": "List session documents",
+            "description": {
+              "content": "Retrieve all documents uploaded to a Studio Session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "studio",
+                "v1",
+                "sessions",
+                ":sessionId",
+                "documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7a7e7384-09e2-462c-a76f-044f92290697",
+              "name": "Session documents",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"sessionId\": \"string\",\n      \"name\": \"string\",\n      \"pageCount\": 8269,\n      \"fileSize\": 5444,\n      \"uploadedBy\": \"string\",\n      \"uploadedAt\": \"1991-09-04T01:14:12.786Z\",\n      \"markupCount\": 8284\n    },\n    {\n      \"id\": \"string\",\n      \"sessionId\": \"string\",\n      \"name\": \"string\",\n      \"pageCount\": 3222,\n      \"fileSize\": 4569,\n      \"uploadedBy\": \"string\",\n      \"uploadedAt\": \"1997-07-10T16:12:15.087Z\",\n      \"markupCount\": 4242\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "708ed3e2-1605-4012-be3f-cfb950815049",
+          "name": "Upload document to session",
+          "request": {
+            "name": "Upload document to session",
+            "description": {
+              "content": "Upload a PDF document to a Studio Session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "studio",
+                "v1",
+                "sessions",
+                ":sessionId",
+                "documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "(Required) PDF file to upload"
+                },
+                {
+                  "key": "fileName",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "95c13ce4-7aee-4bc4-8ee6-65556e0634e1",
+              "name": "Document uploaded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) PDF file to upload",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "fileName",
+                      "value": "<string>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"sessionId\": \"string\",\n  \"name\": \"string\",\n  \"pageCount\": 9557,\n  \"fileSize\": 3078,\n  \"uploadedBy\": \"string\",\n  \"uploadedAt\": \"1982-04-14T15:12:08.896Z\",\n  \"markupCount\": 6657\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2027187e-e61e-4398-8245-295f85bb6078",
+      "name": "Markups",
+      "description": {
+        "content": "Markup and annotation access",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3f16fc53-65d2-413b-9e1b-fcd56ec7b5b1",
+          "name": "Get document markups",
+          "request": {
+            "name": "Get document markups",
+            "description": {
+              "content": "Retrieve all markups (annotations, comments, stamps) from a document in a Studio Session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "studio",
+                "v1",
+                "sessions",
+                ":sessionId",
+                "documents",
+                ":documentId",
+                "markups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageNumber",
+                  "value": "<integer>",
+                  "description": "Filter markups by page number"
+                },
+                {
+                  "disabled": false,
+                  "key": "markupType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "documentId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "32608ab1-36a4-427c-9bc3-bfd460e9a4a3",
+              "name": "Document markups",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "documents",
+                    ":documentId",
+                    "markups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageNumber",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "markupType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "documentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"documentId\": \"string\",\n      \"sessionId\": \"string\",\n      \"pageNumber\": 2263,\n      \"markupType\": \"Highlight\",\n      \"subject\": \"string\",\n      \"comment\": \"string\",\n      \"createdBy\": \"string\",\n      \"createdAt\": \"2017-05-24T22:01:22.238Z\",\n      \"color\": \"string\",\n      \"status\": \"None\",\n      \"space\": {\n        \"x\": 3586.19684730491,\n        \"y\": 3459.9114069562233,\n        \"width\": 4831.90644211623,\n        \"height\": 2756.390115051297\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"documentId\": \"string\",\n      \"sessionId\": \"string\",\n      \"pageNumber\": 8668,\n      \"markupType\": \"Ellipse\",\n      \"subject\": \"string\",\n      \"comment\": \"string\",\n      \"createdBy\": \"string\",\n      \"createdAt\": \"1983-01-08T16:05:49.623Z\",\n      \"color\": \"string\",\n      \"status\": \"None\",\n      \"space\": {\n        \"x\": 2359.090294783035,\n        \"y\": 5485.9486793163915,\n        \"width\": 8688.142473189468,\n        \"height\": 86.68772034743144\n      }\n    }\n  ],\n  \"total\": 1887\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6ddce2bf-8508-44e5-aec1-4f0389a9cc3e",
+      "name": "Sessions",
+      "description": {
+        "content": "Studio Session management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ee29e532-4dd9-4fef-84b1-c38d991789c6",
+          "name": "List sessions",
+          "request": {
+            "name": "List sessions",
+            "description": {
+              "content": "Retrieve a list of Studio Sessions the authenticated user has access to.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "studio",
+                "v1",
+                "sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Filter by session status"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a1525100-2d69-4269-9321-59c42710f37c",
+              "name": "List of sessions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"status\": \"Finished\",\n      \"inviteUrl\": \"https://tVHmiHFMSTKZwfAtYnJ.cragPt3VFuAYHJ.-KhL41JlJQ5pWCPUElKRpnPOeTsBjg4cthF5A6.htlu6fLu6XaRukO\",\n      \"defaultPermission\": \"MarkupOnly\",\n      \"allowInvitations\": false,\n      \"restricted\": false,\n      \"createdBy\": \"string\",\n      \"createdAt\": \"1958-05-15T03:22:31.044Z\",\n      \"finishedAt\": \"1975-01-07T19:39:58.649Z\",\n      \"documentCount\": 121,\n      \"userCount\": 8484\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"status\": \"Active\",\n      \"inviteUrl\": \"https://MexbiNwTatIGIa.mpzlXaISuXKMnC6PHVoDPdN4HWoyymPJo6YXs\",\n      \"defaultPermission\": \"ReadOnly\",\n      \"allowInvitations\": false,\n      \"restricted\": true,\n      \"createdBy\": \"string\",\n      \"createdAt\": \"1963-06-28T00:08:06.037Z\",\n      \"finishedAt\": \"1947-06-27T06:35:08.400Z\",\n      \"documentCount\": 732,\n      \"userCount\": 1463\n    }\n  ],\n  \"total\": 9963,\n  \"offset\": 254\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fb0ee169-aa44-47c6-b17a-124f6fc524f6",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa4edf67-921f-43d2-bb15-51c8854da733",
+          "name": "Create a Studio Session",
+          "request": {
+            "name": "Create a Studio Session",
+            "description": {
+              "content": "Create a new Bluebeam Studio Session for collaborative document review and markup. Sessions can be configured with attendees, invitation settings, and file upload permissions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "studio",
+                "v1",
+                "sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"defaultPermission\": \"MarkupOnly\",\n  \"allowInvitations\": true,\n  \"restricted\": false,\n  \"invitees\": [\n    {\n      \"email\": \"<email>\",\n      \"permission\": \"<string>\"\n    },\n    {\n      \"email\": \"<email>\",\n      \"permission\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "70215aba-b8b9-4f43-a262-43cd7ff84a73",
+              "name": "Session created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"defaultPermission\": \"MarkupOnly\",\n  \"allowInvitations\": true,\n  \"restricted\": false,\n  \"invitees\": [\n    {\n      \"email\": \"<email>\",\n      \"permission\": \"<string>\"\n    },\n    {\n      \"email\": \"<email>\",\n      \"permission\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"status\": \"Active\",\n  \"inviteUrl\": \"http://OiCSmwxQvrtnYPblBvrImL.wscRgfYDGqqgGprz9IizxVwWa+Jmwx3,MJkVMJjwo80xilK,t591\",\n  \"defaultPermission\": \"ReadOnly\",\n  \"allowInvitations\": false,\n  \"restricted\": true,\n  \"createdBy\": \"string\",\n  \"createdAt\": \"2015-05-20T00:08:01.667Z\",\n  \"finishedAt\": \"2026-04-20T20:51:45.314Z\",\n  \"documentCount\": 6420,\n  \"userCount\": 1249\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4a0340d1-5ac2-4233-835d-8dcf555142ac",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"defaultPermission\": \"MarkupOnly\",\n  \"allowInvitations\": true,\n  \"restricted\": false,\n  \"invitees\": [\n    {\n      \"email\": \"<email>\",\n      \"permission\": \"<string>\"\n    },\n    {\n      \"email\": \"<email>\",\n      \"permission\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61babb73-db3d-49d6-9498-30d2fb9051cd",
+          "name": "Get session by ID",
+          "request": {
+            "name": "Get session by ID",
+            "description": {
+              "content": "Retrieve full details for a specific Studio Session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "studio",
+                "v1",
+                "sessions",
+                ":sessionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9f9c6052-c4f5-46b5-a187-adea5f5783dc",
+              "name": "Session details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"status\": \"Active\",\n  \"inviteUrl\": \"http://OiCSmwxQvrtnYPblBvrImL.wscRgfYDGqqgGprz9IizxVwWa+Jmwx3,MJkVMJjwo80xilK,t591\",\n  \"defaultPermission\": \"ReadOnly\",\n  \"allowInvitations\": false,\n  \"restricted\": true,\n  \"createdBy\": \"string\",\n  \"createdAt\": \"2015-05-20T00:08:01.667Z\",\n  \"finishedAt\": \"2026-04-20T20:51:45.314Z\",\n  \"documentCount\": 6420,\n  \"userCount\": 1249\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "892c198c-a378-41f3-8d19-28ccbbdb1617",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0de1527e-c821-451d-beed-7da8b0f17825",
+          "name": "Update session",
+          "request": {
+            "name": "Update session",
+            "description": {
+              "content": "Update session settings such as name, status, or invitation permissions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "studio",
+                "v1",
+                "sessions",
+                ":sessionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"defaultPermission\": \"<string>\",\n  \"allowInvitations\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9071813f-73b6-4448-beac-4464156888be",
+              "name": "Session updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"defaultPermission\": \"<string>\",\n  \"allowInvitations\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"status\": \"Active\",\n  \"inviteUrl\": \"http://OiCSmwxQvrtnYPblBvrImL.wscRgfYDGqqgGprz9IizxVwWa+Jmwx3,MJkVMJjwo80xilK,t591\",\n  \"defaultPermission\": \"ReadOnly\",\n  \"allowInvitations\": false,\n  \"restricted\": true,\n  \"createdBy\": \"string\",\n  \"createdAt\": \"2015-05-20T00:08:01.667Z\",\n  \"finishedAt\": \"2026-04-20T20:51:45.314Z\",\n  \"documentCount\": 6420,\n  \"userCount\": 1249\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "206e5621-03d4-4aa6-a84f-c3d2eaa47059",
+          "name": "Finish/close a session",
+          "request": {
+            "name": "Finish/close a session",
+            "description": {
+              "content": "Close a Studio Session, preventing further markups from attendees.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "studio",
+                "v1",
+                "sessions",
+                ":sessionId",
+                "finish"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ae60aae6-6aef-4476-b512-ef2c32b40565",
+              "name": "Session finished",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "finish"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"status\": \"Active\",\n  \"inviteUrl\": \"http://OiCSmwxQvrtnYPblBvrImL.wscRgfYDGqqgGprz9IizxVwWa+Jmwx3,MJkVMJjwo80xilK,t591\",\n  \"defaultPermission\": \"ReadOnly\",\n  \"allowInvitations\": false,\n  \"restricted\": true,\n  \"createdBy\": \"string\",\n  \"createdAt\": \"2015-05-20T00:08:01.667Z\",\n  \"finishedAt\": \"2026-04-20T20:51:45.314Z\",\n  \"documentCount\": 6420,\n  \"userCount\": 1249\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "58f0ce53-811d-47c8-b88b-5520b873b290",
+      "name": "Users",
+      "description": {
+        "content": "Session user management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "216b3be5-d9d7-4968-bd4c-248954188710",
+          "name": "List session users/attendees",
+          "request": {
+            "name": "List session users/attendees",
+            "description": {
+              "content": "Retrieve all users invited to or attending a Studio Session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "studio",
+                "v1",
+                "sessions",
+                ":sessionId",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "73ce0df0-233f-4eeb-b263-2bc3e0e20d4b",
+              "name": "Session users",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"email\": \"string\",\n      \"name\": \"string\",\n      \"permission\": \"FullAccess\",\n      \"status\": \"Left\",\n      \"invitedAt\": \"1969-07-27T14:27:32.714Z\",\n      \"lastActiveAt\": \"1959-03-22T10:59:25.916Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"email\": \"string\",\n      \"name\": \"string\",\n      \"permission\": \"ReadOnly\",\n      \"status\": \"Active\",\n      \"invitedAt\": \"2006-01-04T00:48:35.213Z\",\n      \"lastActiveAt\": \"2026-02-24T00:15:57.358Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c1d46166-3112-4847-bf53-58ffc9018490",
+          "name": "Invite user to session",
+          "request": {
+            "name": "Invite user to session",
+            "description": {
+              "content": "Invite a user to a Studio Session by email address.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "studio",
+                "v1",
+                "sessions",
+                ":sessionId",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<email>\",\n  \"permission\": \"MarkupOnly\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "94ea291e-b8b9-45b5-b22d-1a41d7698e57",
+              "name": "User invited",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<email>\",\n  \"permission\": \"MarkupOnly\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"email\": \"string\",\n  \"name\": \"string\",\n  \"permission\": \"ReadOnly\",\n  \"status\": \"Left\",\n  \"invitedAt\": \"1958-10-11T04:02:18.033Z\",\n  \"lastActiveAt\": \"1958-06-13T13:43:42.979Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.bluebeam.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "full jobs.read jobs.create"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://authserver.bluebeam.com/auth/oauth/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://authserver.bluebeam.com/auth/oauth/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "25405792-3f94-491c-a6bb-46880900bc30",
+    "name": "Bluebeam Studio API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Bluebeam Studio API enables programmatic access to Studio Sessions for document collaboration, markup management, and PDF review workflows. OAuth 2.0 REST APIs allow third-party applications to create and manage studio sessions, retrieve markup data, and integrate document annotations into AEC construction workflows.\n\nContact Support:\n Name: Bluebeam Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}
