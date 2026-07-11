@@ -1,0 +1,18 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/bluebeam-studio-openapi.yml
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: oauth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://authserver.bluebeam.com/auth/oauth/authorize
+    tokenUrl: https://authserver.bluebeam.com/auth/oauth/token
+    scopes: 3
+  sources:
+  - openapi/bluebeam-studio-openapi.yml
