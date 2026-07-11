@@ -55,6 +55,8 @@ apis:
       integrations with Studio Prime. APIs support programmatic access to project drawing sets, session management, and
       markup synchronization for construction project management platforms.
 common:
+  - type: OAuthScopes
+    url: scopes/bluebeam-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/Bluebeam
   - type: LinkedIn

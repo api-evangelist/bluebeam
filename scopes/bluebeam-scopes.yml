@@ -1,0 +1,29 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/bluebeam-studio-openapi.yml
+schemes:
+- name: oauth2
+  source: openapi/bluebeam-studio-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://authserver.bluebeam.com/auth/oauth/authorize
+    tokenUrl: https://authserver.bluebeam.com/auth/oauth/token
+scopes:
+- scope: full
+  description: Full access to Bluebeam Studio API
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/bluebeam-studio-openapi.yml
+- scope: jobs.create
+  description: Create and manage sessions
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/bluebeam-studio-openapi.yml
+- scope: jobs.read
+  description: Read session data
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/bluebeam-studio-openapi.yml
