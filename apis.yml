@@ -55,6 +55,8 @@ apis:
       integrations with Studio Prime. APIs support programmatic access to project drawing sets, session management, and
       markup synchronization for construction project management platforms.
 common:
+  - type: AgenticAccess
+    url: agentic-access/bluebeam-agentic-access.yml
   - type: DomainSecurity
     url: security/bluebeam-domain-security.yml
   - type: Authentication
