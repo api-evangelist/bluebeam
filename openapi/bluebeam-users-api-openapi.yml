@@ -1,0 +1,122 @@
+openapi: 3.1.0
+info:
+  title: Bluebeam Studio Documents Users API
+  description: The Bluebeam Studio API enables programmatic access to Studio Sessions for document collaboration, markup management, and PDF review workflows. OAuth 2.0 REST APIs allow third-party applications to create and manage studio sessions, retrieve markup data, and integrate document annotations into AEC construction workflows.
+  version: 1.0.0
+  contact:
+    name: Bluebeam Developer Portal
+    url: https://developers.bluebeam.com/
+servers:
+- url: https://api.bluebeam.com
+  description: Bluebeam Studio API
+security:
+- oauth2: []
+tags:
+- name: Users
+  description: Session user management
+paths:
+  /studio/v1/sessions/{sessionId}/users:
+    get:
+      operationId: listSessionUsers
+      summary: List session users/attendees
+      description: Retrieve all users invited to or attending a Studio Session.
+      tags:
+      - Users
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Session users
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionUserList'
+    post:
+      operationId: inviteSessionUser
+      summary: Invite user to session
+      description: Invite a user to a Studio Session by email address.
+      tags:
+      - Users
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - email
+              properties:
+                email:
+                  type: string
+                  format: email
+                permission:
+                  type: string
+                  enum:
+                  - ReadOnly
+                  - MarkupOnly
+                  - FullAccess
+                  default: MarkupOnly
+      responses:
+        '201':
+          description: User invited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionUser'
+components:
+  schemas:
+    SessionUserList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/SessionUser'
+    SessionUser:
+      type: object
+      properties:
+        id:
+          type: string
+        email:
+          type: string
+        name:
+          type: string
+        permission:
+          type: string
+          enum:
+          - ReadOnly
+          - MarkupOnly
+          - FullAccess
+        status:
+          type: string
+          enum:
+          - Invited
+          - Active
+          - Left
+        invitedAt:
+          type: string
+          format: date-time
+        lastActiveAt:
+          type: string
+          format: date-time
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://authserver.bluebeam.com/auth/oauth/authorize
+          tokenUrl: https://authserver.bluebeam.com/auth/oauth/token
+          scopes:
+            full: Full access to Bluebeam Studio API
+            jobs.read: Read session data
+            jobs.create: Create and manage sessions

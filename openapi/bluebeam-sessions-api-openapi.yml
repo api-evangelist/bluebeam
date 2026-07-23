@@ -1,0 +1,284 @@
+openapi: 3.1.0
+info:
+  title: Bluebeam Studio Documents Sessions API
+  description: The Bluebeam Studio API enables programmatic access to Studio Sessions for document collaboration, markup management, and PDF review workflows. OAuth 2.0 REST APIs allow third-party applications to create and manage studio sessions, retrieve markup data, and integrate document annotations into AEC construction workflows.
+  version: 1.0.0
+  contact:
+    name: Bluebeam Developer Portal
+    url: https://developers.bluebeam.com/
+servers:
+- url: https://api.bluebeam.com
+  description: Bluebeam Studio API
+security:
+- oauth2: []
+tags:
+- name: Sessions
+  description: Studio Session management
+paths:
+  /studio/v1/sessions:
+    get:
+      operationId: listSessions
+      summary: List sessions
+      description: Retrieve a list of Studio Sessions the authenticated user has access to.
+      tags:
+      - Sessions
+      parameters:
+      - name: status
+        in: query
+        description: Filter by session status
+        schema:
+          type: string
+          enum:
+          - Active
+          - Finished
+          - Pending
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          default: 25
+      - name: offset
+        in: query
+        schema:
+          type: integer
+          default: 0
+      responses:
+        '200':
+          description: List of sessions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createSession
+      summary: Create a Studio Session
+      description: Create a new Bluebeam Studio Session for collaborative document review and markup. Sessions can be configured with attendees, invitation settings, and file upload permissions.
+      tags:
+      - Sessions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SessionRequest'
+      responses:
+        '201':
+          description: Session created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  /studio/v1/sessions/{sessionId}:
+    get:
+      operationId: getSession
+      summary: Get session by ID
+      description: Retrieve full details for a specific Studio Session.
+      tags:
+      - Sessions
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Session details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateSession
+      summary: Update session
+      description: Update session settings such as name, status, or invitation permissions.
+      tags:
+      - Sessions
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SessionUpdate'
+      responses:
+        '200':
+          description: Session updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+  /studio/v1/sessions/{sessionId}/finish:
+    post:
+      operationId: finishSession
+      summary: Finish/close a session
+      description: Close a Studio Session, preventing further markups from attendees.
+      tags:
+      - Sessions
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Session finished
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+components:
+  schemas:
+    SessionRequest:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        defaultPermission:
+          type: string
+          enum:
+          - ReadOnly
+          - MarkupOnly
+          - FullAccess
+          default: MarkupOnly
+        allowInvitations:
+          type: boolean
+          default: true
+        restricted:
+          type: boolean
+          default: false
+        invitees:
+          type: array
+          items:
+            type: object
+            properties:
+              email:
+                type: string
+                format: email
+              permission:
+                type: string
+                enum:
+                - ReadOnly
+                - MarkupOnly
+                - FullAccess
+    SessionUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        defaultPermission:
+          type: string
+          enum:
+          - ReadOnly
+          - MarkupOnly
+          - FullAccess
+        allowInvitations:
+          type: boolean
+    Session:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Studio Session ID
+        name:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+          enum:
+          - Active
+          - Finished
+          - Pending
+        inviteUrl:
+          type: string
+          format: uri
+          description: URL for users to join the session
+        defaultPermission:
+          type: string
+          enum:
+          - ReadOnly
+          - MarkupOnly
+          - FullAccess
+        allowInvitations:
+          type: boolean
+        restricted:
+          type: boolean
+        createdBy:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        finishedAt:
+          type: string
+          format: date-time
+        documentCount:
+          type: integer
+        userCount:
+          type: integer
+    SessionList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Session'
+        total:
+          type: integer
+        offset:
+          type: integer
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+  responses:
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://authserver.bluebeam.com/auth/oauth/authorize
+          tokenUrl: https://authserver.bluebeam.com/auth/oauth/token
+          scopes:
+            full: Full access to Bluebeam Studio API
+            jobs.read: Read session data
+            jobs.create: Create and manage sessions

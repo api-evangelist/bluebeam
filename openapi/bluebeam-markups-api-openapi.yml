@@ -1,0 +1,136 @@
+openapi: 3.1.0
+info:
+  title: Bluebeam Studio Documents Markups API
+  description: The Bluebeam Studio API enables programmatic access to Studio Sessions for document collaboration, markup management, and PDF review workflows. OAuth 2.0 REST APIs allow third-party applications to create and manage studio sessions, retrieve markup data, and integrate document annotations into AEC construction workflows.
+  version: 1.0.0
+  contact:
+    name: Bluebeam Developer Portal
+    url: https://developers.bluebeam.com/
+servers:
+- url: https://api.bluebeam.com
+  description: Bluebeam Studio API
+security:
+- oauth2: []
+tags:
+- name: Markups
+  description: Markup and annotation access
+paths:
+  /studio/v1/sessions/{sessionId}/documents/{documentId}/markups:
+    get:
+      operationId: getDocumentMarkups
+      summary: Get document markups
+      description: Retrieve all markups (annotations, comments, stamps) from a document in a Studio Session.
+      tags:
+      - Markups
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: documentId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageNumber
+        in: query
+        description: Filter markups by page number
+        schema:
+          type: integer
+      - name: markupType
+        in: query
+        schema:
+          type: string
+          enum:
+          - Highlight
+          - Ellipse
+          - Rectangle
+          - Polyline
+          - Cloud
+          - Stamp
+          - Text
+          - Note
+          - Measurement
+      responses:
+        '200':
+          description: Document markups
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MarkupList'
+components:
+  schemas:
+    MarkupList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Markup'
+        total:
+          type: integer
+    Markup:
+      type: object
+      properties:
+        id:
+          type: string
+        documentId:
+          type: string
+        sessionId:
+          type: string
+        pageNumber:
+          type: integer
+        markupType:
+          type: string
+          enum:
+          - Highlight
+          - Ellipse
+          - Rectangle
+          - Polyline
+          - Cloud
+          - Stamp
+          - Text
+          - Note
+          - Measurement
+        subject:
+          type: string
+        comment:
+          type: string
+        createdBy:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        color:
+          type: string
+        status:
+          type: string
+          enum:
+          - None
+          - Accepted
+          - Rejected
+          - Cancelled
+          - Completed
+        space:
+          type: object
+          properties:
+            x:
+              type: number
+            y:
+              type: number
+            width:
+              type: number
+            height:
+              type: number
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://authserver.bluebeam.com/auth/oauth/authorize
+          tokenUrl: https://authserver.bluebeam.com/auth/oauth/token
+          scopes:
+            full: Full access to Bluebeam Studio API
+            jobs.read: Read session data
+            jobs.create: Create and manage sessions

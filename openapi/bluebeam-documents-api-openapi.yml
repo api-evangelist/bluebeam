@@ -1,0 +1,112 @@
+openapi: 3.1.0
+info:
+  title: Bluebeam Studio Documents API
+  description: The Bluebeam Studio API enables programmatic access to Studio Sessions for document collaboration, markup management, and PDF review workflows. OAuth 2.0 REST APIs allow third-party applications to create and manage studio sessions, retrieve markup data, and integrate document annotations into AEC construction workflows.
+  version: 1.0.0
+  contact:
+    name: Bluebeam Developer Portal
+    url: https://developers.bluebeam.com/
+servers:
+- url: https://api.bluebeam.com
+  description: Bluebeam Studio API
+security:
+- oauth2: []
+tags:
+- name: Documents
+  description: Document management within sessions
+paths:
+  /studio/v1/sessions/{sessionId}/documents:
+    get:
+      operationId: listSessionDocuments
+      summary: List session documents
+      description: Retrieve all documents uploaded to a Studio Session.
+      tags:
+      - Documents
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Session documents
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentList'
+    post:
+      operationId: uploadSessionDocument
+      summary: Upload document to session
+      description: Upload a PDF document to a Studio Session.
+      tags:
+      - Documents
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+              - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: PDF file to upload
+                fileName:
+                  type: string
+      responses:
+        '201':
+          description: Document uploaded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Document'
+components:
+  schemas:
+    Document:
+      type: object
+      properties:
+        id:
+          type: string
+        sessionId:
+          type: string
+        name:
+          type: string
+        pageCount:
+          type: integer
+        fileSize:
+          type: integer
+          description: File size in bytes
+        uploadedBy:
+          type: string
+        uploadedAt:
+          type: string
+          format: date-time
+        markupCount:
+          type: integer
+    DocumentList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Document'
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://authserver.bluebeam.com/auth/oauth/authorize
+          tokenUrl: https://authserver.bluebeam.com/auth/oauth/token
+          scopes:
+            full: Full access to Bluebeam Studio API
+            jobs.read: Read session data
+            jobs.create: Create and manage sessions
