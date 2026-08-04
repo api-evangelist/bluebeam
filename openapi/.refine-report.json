@@ -1,0 +1,20 @@
+{
+  "provider": "bluebeam",
+  "sources": [
+    "bluebeam-documents-api-openapi.yml",
+    "bluebeam-markups-api-openapi.yml",
+    "bluebeam-sessions-api-openapi.yml",
+    "bluebeam-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "bluebeam-documents-api-openapi.yml",
+    "bluebeam-markups-api-openapi.yml",
+    "bluebeam-sessions-api-openapi.yml",
+    "bluebeam-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
