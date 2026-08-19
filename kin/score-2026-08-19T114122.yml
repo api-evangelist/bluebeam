@@ -1,0 +1,49 @@
+# Kin Score artifact — bluebeam — 2026-08-19T114122
+# The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
+---
+kin_score:
+  slug: bluebeam
+  schema_version: 0.12.0
+  scored_at: '2026-08-19'
+  run_ts: 2026-08-19T114122
+  composite: 36.6
+  band: thin
+  facets:
+    discoverability: 55.6
+    contract_quality: 60.7
+    governance: 9.8
+    operational_transparency: 26.3
+    developer_ergonomics: 40.5
+    commercial_clarity: 15.8
+    contract_governance: 9.8
+    access_clarity: 15.8
+  agent_readiness:
+    score: 29.1
+    band: agent-aware
+    dimensions:
+      spec_presence: true
+      agentic_access: derived
+      reversibility_documented: false
+      mcp_server: false
+      auth_clarity: true
+      idempotency: false
+      error_semantics: false
+      openapi_examples: false
+      rate_limit_signal: documented
+      event_surface_described: false
+      agent_skills: false
+      well_known_catalog: false
+      consent_identity: false
+      agent_card: false
+      dry_run_mode: false
+  regulatory:
+    applies: false
+    undetermined: true
+    note: provider carries no tags; regime could not be determined
+  provenance:
+    agentic_access: derived
+    contracts:
+      total: 4
+      derived: 0
+      coverage: 0.0
+      callable: 100.0
