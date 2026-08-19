@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bluebeam Studio Documents Users API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://authserver.bluebeam.com/auth/oauth/authorize",
+      "accessTokenUrl": "https://authserver.bluebeam.com/auth/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List session users/attendees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bluebeam.com/studio/v1/sessions/:sessionId/users",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve all users invited to or attending a Studio Session."
+        },
+        {
+          "info": {
+            "name": "Invite user to session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bluebeam.com/studio/v1/sessions/:sessionId/users",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Invite a user to a Studio Session by email address."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

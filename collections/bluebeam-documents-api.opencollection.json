@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bluebeam Studio Documents API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://authserver.bluebeam.com/auth/oauth/authorize",
+      "accessTokenUrl": "https://authserver.bluebeam.com/auth/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List session documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bluebeam.com/studio/v1/sessions/:sessionId/documents",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve all documents uploaded to a Studio Session."
+        },
+        {
+          "info": {
+            "name": "Upload document to session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bluebeam.com/studio/v1/sessions/:sessionId/documents",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "fileName",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload a PDF document to a Studio Session."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,299 @@
+{
+  "item": [
+    {
+      "id": "00498819-130e-49bf-94c0-58b51fe16999",
+      "name": "Documents",
+      "description": {
+        "content": "Document management within sessions",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "954fe5ed-61ad-4330-8a79-f388d332fa9a",
+          "name": "List session documents",
+          "request": {
+            "name": "List session documents",
+            "description": {
+              "content": "Retrieve all documents uploaded to a Studio Session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "studio",
+                "v1",
+                "sessions",
+                ":sessionId",
+                "documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f01949b5-8263-4ee0-8183-4672c6df493e",
+              "name": "Session documents",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"sessionId\": \"string\",\n      \"name\": \"string\",\n      \"pageCount\": 8757,\n      \"fileSize\": 192,\n      \"uploadedBy\": \"string\",\n      \"uploadedAt\": \"1949-10-13T00:15:27.911Z\",\n      \"markupCount\": 8810\n    },\n    {\n      \"id\": \"string\",\n      \"sessionId\": \"string\",\n      \"name\": \"string\",\n      \"pageCount\": 3070,\n      \"fileSize\": 2374,\n      \"uploadedBy\": \"string\",\n      \"uploadedAt\": \"1968-10-17T07:56:26.269Z\",\n      \"markupCount\": 2746\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e213a672-ea04-439d-a2b7-5f419edf83d5",
+          "name": "Upload document to session",
+          "request": {
+            "name": "Upload document to session",
+            "description": {
+              "content": "Upload a PDF document to a Studio Session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "studio",
+                "v1",
+                "sessions",
+                ":sessionId",
+                "documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "(Required) PDF file to upload"
+                },
+                {
+                  "key": "fileName",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d5a65e9f-868f-453f-bcdc-0042c4927ffe",
+              "name": "Document uploaded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) PDF file to upload",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "fileName",
+                      "value": "<string>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"sessionId\": \"string\",\n  \"name\": \"string\",\n  \"pageCount\": 9830,\n  \"fileSize\": 7272,\n  \"uploadedBy\": \"string\",\n  \"uploadedAt\": \"1955-12-14T16:54:39.469Z\",\n  \"markupCount\": 3936\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.bluebeam.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "full jobs.read jobs.create"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://authserver.bluebeam.com/auth/oauth/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://authserver.bluebeam.com/auth/oauth/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4c62b34e-85d3-4dc8-b2f2-f9d63ac4459f",
+    "name": "Bluebeam Studio Documents API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Bluebeam Studio API enables programmatic access to Studio Sessions for document collaboration, markup management, and PDF review workflows. OAuth 2.0 REST APIs allow third-party applications to create and manage studio sessions, retrieve markup data, and integrate document annotations into AEC construction workflows.\n\nContact Support:\n Name: Bluebeam Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

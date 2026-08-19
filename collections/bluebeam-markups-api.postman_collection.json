@@ -1,0 +1,194 @@
+{
+  "item": [
+    {
+      "id": "f6fafe42-cdcf-4ace-9bb7-6d94b6edb87e",
+      "name": "Markups",
+      "description": {
+        "content": "Markup and annotation access",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9a9e7e2e-608d-472a-bdf2-ea88ed86a98d",
+          "name": "Get document markups",
+          "request": {
+            "name": "Get document markups",
+            "description": {
+              "content": "Retrieve all markups (annotations, comments, stamps) from a document in a Studio Session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "studio",
+                "v1",
+                "sessions",
+                ":sessionId",
+                "documents",
+                ":documentId",
+                "markups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageNumber",
+                  "value": "<integer>",
+                  "description": "Filter markups by page number"
+                },
+                {
+                  "disabled": false,
+                  "key": "markupType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "documentId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "071bb6e7-2964-4817-880e-d3dc59a5c58a",
+              "name": "Document markups",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "documents",
+                    ":documentId",
+                    "markups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageNumber",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "markupType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "documentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"documentId\": \"string\",\n      \"sessionId\": \"string\",\n      \"pageNumber\": 92,\n      \"markupType\": \"Polyline\",\n      \"subject\": \"string\",\n      \"comment\": \"string\",\n      \"createdBy\": \"string\",\n      \"createdAt\": \"1984-03-25T06:02:00.554Z\",\n      \"color\": \"string\",\n      \"status\": \"Accepted\",\n      \"space\": {\n        \"x\": 7664.9257891316665,\n        \"y\": 8363.061255350862,\n        \"width\": 2785.095435096426,\n        \"height\": 5960.740691278409\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"documentId\": \"string\",\n      \"sessionId\": \"string\",\n      \"pageNumber\": 8885,\n      \"markupType\": \"Measurement\",\n      \"subject\": \"string\",\n      \"comment\": \"string\",\n      \"createdBy\": \"string\",\n      \"createdAt\": \"1974-05-31T00:40:28.814Z\",\n      \"color\": \"string\",\n      \"status\": \"Accepted\",\n      \"space\": {\n        \"x\": 9657.464450714,\n        \"y\": 3090.805737939881,\n        \"width\": 1200.1673497961451,\n        \"height\": 2597.9642951572714\n      }\n    }\n  ],\n  \"total\": 6594\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.bluebeam.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "full jobs.read jobs.create"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://authserver.bluebeam.com/auth/oauth/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://authserver.bluebeam.com/auth/oauth/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3bc2f541-3e3b-4e36-a2e1-bf512048752e",
+    "name": "Bluebeam Studio Documents Markups API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Bluebeam Studio API enables programmatic access to Studio Sessions for document collaboration, markup management, and PDF review workflows. OAuth 2.0 REST APIs allow third-party applications to create and manage studio sessions, retrieve markup data, and integrate document annotations into AEC construction workflows.\n\nContact Support:\n Name: Bluebeam Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

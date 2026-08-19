@@ -1,0 +1,278 @@
+{
+  "item": [
+    {
+      "id": "5222a7b5-dd4e-4721-84b1-e3fc416e5597",
+      "name": "Users",
+      "description": {
+        "content": "Session user management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "45c1b5cf-9571-4350-80a6-c9c1baa45859",
+          "name": "List session users/attendees",
+          "request": {
+            "name": "List session users/attendees",
+            "description": {
+              "content": "Retrieve all users invited to or attending a Studio Session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "studio",
+                "v1",
+                "sessions",
+                ":sessionId",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a26ee758-380e-4ecf-a912-cb2ae37d6031",
+              "name": "Session users",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"email\": \"string\",\n      \"name\": \"string\",\n      \"permission\": \"FullAccess\",\n      \"status\": \"Invited\",\n      \"invitedAt\": \"2014-08-16T18:51:55.845Z\",\n      \"lastActiveAt\": \"2005-01-07T01:24:33.980Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"email\": \"string\",\n      \"name\": \"string\",\n      \"permission\": \"MarkupOnly\",\n      \"status\": \"Left\",\n      \"invitedAt\": \"1999-02-15T21:44:08.718Z\",\n      \"lastActiveAt\": \"1954-09-20T06:39:40.538Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "defdca4d-d4f8-4284-991b-d7dc63750a93",
+          "name": "Invite user to session",
+          "request": {
+            "name": "Invite user to session",
+            "description": {
+              "content": "Invite a user to a Studio Session by email address.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "studio",
+                "v1",
+                "sessions",
+                ":sessionId",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<email>\",\n  \"permission\": \"MarkupOnly\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6cc7caae-8ff7-4bb9-9199-fb66cf1da10c",
+              "name": "User invited",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "studio",
+                    "v1",
+                    "sessions",
+                    ":sessionId",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<email>\",\n  \"permission\": \"MarkupOnly\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"email\": \"string\",\n  \"name\": \"string\",\n  \"permission\": \"FullAccess\",\n  \"status\": \"Active\",\n  \"invitedAt\": \"2022-10-12T10:52:50.253Z\",\n  \"lastActiveAt\": \"2011-10-22T23:17:18.884Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.bluebeam.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "full jobs.read jobs.create"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://authserver.bluebeam.com/auth/oauth/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://authserver.bluebeam.com/auth/oauth/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "73d6834d-fb02-49ff-ba8b-5e4d1fb1a950",
+    "name": "Bluebeam Studio Documents Users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Bluebeam Studio API enables programmatic access to Studio Sessions for document collaboration, markup management, and PDF review workflows. OAuth 2.0 REST APIs allow third-party applications to create and manage studio sessions, retrieve markup data, and integrate document annotations into AEC construction workflows.\n\nContact Support:\n Name: Bluebeam Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}
