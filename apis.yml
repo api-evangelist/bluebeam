@@ -101,6 +101,8 @@ apis:
   humanURL: https://developers.bluebeam.com/
   baseURL: https://api.bluebeam.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
