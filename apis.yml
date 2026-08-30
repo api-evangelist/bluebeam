@@ -36,7 +36,6 @@ apis:
   - PDF
   - Project Management
   - Studio Prime
-  image: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/image.png
   humanURL: https://developers.bluebeam.com/
   baseURL: https://api.bluebeam.com
   properties:
