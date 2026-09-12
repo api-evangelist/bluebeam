@@ -1,28 +1,29 @@
-# Kin Score artifact — bluebeam — 2026-08-10T093022
+# Kin Score artifact — bluebeam — 2026-09-12T062655
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: bluebeam
-  schema_version: 0.9.1
-  scored_at: '2026-08-10'
-  run_ts: 2026-08-10T093022
-  composite: 53.1
-  band: developing
+  schema_version: 0.21.0
+  scored_at: '2026-09-12'
+  run_ts: 2026-09-12T062655
+  composite: 36.3
+  band: thin
   facets:
-    discoverability: 55.6
-    contract_quality: 66.7
-    governance: 58.3
-    operational_transparency: 52.6
-    developer_ergonomics: 45.7
-    commercial_clarity: 39.5
+    discoverability: 50.0
+    contract_quality: 59.0
+    contract_governance: 9.8
+    operational_transparency: 26.3
+    developer_ergonomics: 47.6
+    access_clarity: 15.8
   agent_readiness:
-    score: 30.6
+    score: 24.8
     band: agent-aware
     dimensions:
       spec_presence: true
       agentic_access: derived
+      reversibility_documented: false
       mcp_server: false
-      auth_clarity: true
+      auth_clarity: negotiable
       idempotency: false
       error_semantics: false
       openapi_examples: false
@@ -33,6 +34,13 @@ kin_score:
       consent_identity: false
       agent_card: false
       dry_run_mode: false
+      delegated_identity: documented
+      protected_resource_metadata: false
+      dynamic_client_registration: false
+      agentic_commerce: false
+  regulatory:
+    undetermined: true
+    note: provider declares no identity tags; regime could not be determined
   provenance:
     agentic_access: derived
     contracts:
