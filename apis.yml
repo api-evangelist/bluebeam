@@ -48,8 +48,7 @@ apis:
     type: Authentication
   - url: https://support.bluebeam.com/integrations/int-overview.html
     type: Documentation
-  description: >-
-    The Bluebeam Studio Prime Integration API leverages the Bluebeam Public API to enable third-party
+  description: The Bluebeam Studio Prime Integration API leverages the Bluebeam Public API to enable third-party
     application integrations with Studio Prime. APIs support programmatic access to project drawing sets,
     session management, and markup synchronization for construction project management platforms.
 - aid: bluebeam:bluebeam-documents-api
@@ -127,70 +126,75 @@ apis:
   - type: Reference
     url: https://support.bluebeam.com/developer/studio-session-guide.html
 common:
-  - type: AgenticAccess
-    url: agentic-access/bluebeam-agentic-access.yml
-  - type: DomainSecurity
-    url: security/bluebeam-domain-security.yml
-  - type: Authentication
-    url: authentication/bluebeam-authentication.yml
-  - type: OAuthScopes
-    url: scopes/bluebeam-scopes.yml
-  - type: GitHubOrganization
-    url: https://github.com/Bluebeam
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/bluebeam-software
-  - url: https://www.bluebeam.com
-    type: Website
-  - url: https://developers.bluebeam.com/
-    type: Portal
-  - url: https://support.bluebeam.com/integrations/develop-integrations.html
-    type: Documentation
-  - url: https://support.bluebeam.com/developer/getting-started-dev-portal.html
-    type: GettingStarted
-  - url: https://support.bluebeam.com/developer/authentication-guide.html
-    type: Authentication
-  - url: https://status.bluebeam.com/
-    type: StatusPage
-  - url: https://blog.bluebeam.com/
-    type: Blog
-  - url: https://community.bluebeam.com/
-    type: Support
-  - url: https://support.bluebeam.com/integrations/integrations-hub.html
-    type: Documentation
-  - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/openapi/bluebeam-studio-openapi.yml
-    type: OpenAPI
-  - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-schema/bluebeam-session-schema.json
-    type: JSONSchema
-  - url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-ld/bluebeam-context.jsonld
-    type: JSONLDContext
-  - type: Integrations
-    url: https://www.bluebeam.com/product/integrations/
+- type: AgenticAccess
+  url: agentic-access/bluebeam-agentic-access.yml
+- type: DomainSecurity
+  url: security/bluebeam-domain-security.yml
+- type: Authentication
+  url: authentication/bluebeam-authentication.yml
+- type: OAuthScopes
+  url: scopes/bluebeam-scopes.yml
+- type: GitHubOrganization
+  url: https://github.com/Bluebeam
+- type: LinkedIn
+  url: https://www.linkedin.com/company/bluebeam-software
+- url: https://www.bluebeam.com
+  type: Website
+- url: https://developers.bluebeam.com/
+  type: Portal
+- url: https://support.bluebeam.com/integrations/develop-integrations.html
+  type: Documentation
+- url: https://support.bluebeam.com/developer/getting-started-dev-portal.html
+  type: GettingStarted
+- url: https://support.bluebeam.com/developer/authentication-guide.html
+  type: Authentication
+- url: https://status.bluebeam.com/
+  type: StatusPage
+- url: https://blog.bluebeam.com/
+  type: Blog
+- url: https://community.bluebeam.com/
+  type: Support
+- url: https://support.bluebeam.com/integrations/integrations-hub.html
+  type: Documentation
+- url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/openapi/bluebeam-studio-openapi.yml
+  type: OpenAPI
+- url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-schema/bluebeam-session-schema.json
+  type: JSONSchema
+- url: https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-ld/bluebeam-context.jsonld
+  type: JSONLDContext
+- type: Integrations
+  url: https://www.bluebeam.com/product/integrations/
 integrations:
-  - name: Bluebeam Construction Software
-  - name: Open Mobile Navigation
-  - name: Close Mobile Navigation
-  - name: mob-hero-icons-1
-  - name: mob-hero-icons-2
-  - name: col-1
-  - name: col-2
-  - name: col-3
-  - name: Company Logos
-  - name: Permitting
-  - name: Construction Management
-  - name: Design Review
-  - name: Document Management
-  - name: PDF Creation
-  - name: Cut out of a laptop
-  - name: Get it on Google Play
-  - name: Facebook
-  - name: LinkedIn
-  - name: Youtube
-  - name: Instagram
-  - name: Bluebeam Inc.
+- name: Bluebeam Construction Software
+- name: Open Mobile Navigation
+- name: Close Mobile Navigation
+- name: mob-hero-icons-1
+- name: mob-hero-icons-2
+- name: col-1
+- name: col-2
+- name: col-3
+- name: Company Logos
+- name: Permitting
+- name: Construction Management
+- name: Design Review
+- name: Document Management
+- name: PDF Creation
+- name: Cut out of a laptop
+- name: Get it on Google Play
+- name: Facebook
+- name: LinkedIn
+- name: Youtube
+- name: Instagram
+- name: Bluebeam Inc.
 maintainers:
-  - name: Kin Lane
-    email: kin@apievangelist.com
-modified: '2026-05-19'
-description: >-
-  Bluebeam develops smart, simple project efficiency and collaboration software for design and construction
-  professionals worldwide, with its flagship Bluebeam Revu PDF markup and collaboration tool.
+- name: Kin Lane
+  email: kin@apievangelist.com
+modified: '2026-09-16'
+description: Bluebeam develops smart, simple project efficiency and collaboration software for design
+  and construction professionals worldwide, with its flagship Bluebeam Revu PDF markup and collaboration
+  tool.
+tags:
+- Construction
+- PDF
+- Project Management
+- Documents
