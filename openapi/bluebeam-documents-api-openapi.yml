@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Bluebeam Studio Documents API
   description: The Bluebeam Studio API enables programmatic access to Studio Sessions for document collaboration, markup management, and PDF review workflows. OAuth 2.0 REST APIs allow third-party applications to create and manage studio sessions, retrieve markup data, and integrate document annotations into AEC construction workflows.
@@ -71,6 +71,13 @@ paths:
                 $ref: '#/components/schemas/Document'
 components:
   schemas:
+    DocumentList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Document'
     Document:
       type: object
       properties:
@@ -92,13 +99,6 @@ components:
           format: date-time
         markupCount:
           type: integer
-    DocumentList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Document'
   securitySchemes:
     oauth2:
       type: oauth2

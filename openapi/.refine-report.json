@@ -1,10 +1,7 @@
 {
   "provider": "bluebeam",
   "sources": [
-    "bluebeam-documents-api-openapi.yml",
-    "bluebeam-markups-api-openapi.yml",
-    "bluebeam-sessions-api-openapi.yml",
-    "bluebeam-users-api-openapi.yml"
+    "_original/bluebeam-studio-openapi.yml"
   ],
   "outputs": [
     "bluebeam-documents-api-openapi.yml",
@@ -15,6 +12,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "bluebeam-studio-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "bluebeam-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bluebeam-markups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bluebeam-sessions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bluebeam-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
