@@ -71,13 +71,6 @@ paths:
                 $ref: '#/components/schemas/Document'
 components:
   schemas:
-    DocumentList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Document'
     Document:
       type: object
       properties:
@@ -99,6 +92,13 @@ components:
           format: date-time
         markupCount:
           type: integer
+    DocumentList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Document'
   securitySchemes:
     oauth2:
       type: oauth2

@@ -141,6 +141,49 @@ paths:
                 $ref: '#/components/schemas/Session'
 components:
   schemas:
+    SessionRequest:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        defaultPermission:
+          type: string
+          enum:
+          - ReadOnly
+          - MarkupOnly
+          - FullAccess
+          default: MarkupOnly
+        allowInvitations:
+          type: boolean
+          default: true
+        restricted:
+          type: boolean
+          default: false
+        invitees:
+          type: array
+          items:
+            type: object
+            properties:
+              email:
+                type: string
+                format: email
+              permission:
+                type: string
+                enum:
+                - ReadOnly
+                - MarkupOnly
+                - FullAccess
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
     Session:
       type: object
       properties:
@@ -183,6 +226,17 @@ components:
           type: integer
         userCount:
           type: integer
+    SessionList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Session'
+        total:
+          type: integer
+        offset:
+          type: integer
     SessionUpdate:
       type: object
       properties:
@@ -198,60 +252,6 @@ components:
           - FullAccess
         allowInvitations:
           type: boolean
-    Error:
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-    SessionRequest:
-      type: object
-      required:
-      - name
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-        defaultPermission:
-          type: string
-          enum:
-          - ReadOnly
-          - MarkupOnly
-          - FullAccess
-          default: MarkupOnly
-        allowInvitations:
-          type: boolean
-          default: true
-        restricted:
-          type: boolean
-          default: false
-        invitees:
-          type: array
-          items:
-            type: object
-            properties:
-              email:
-                type: string
-                format: email
-              permission:
-                type: string
-                enum:
-                - ReadOnly
-                - MarkupOnly
-                - FullAccess
-    SessionList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Session'
-        total:
-          type: integer
-        offset:
-          type: integer
   responses:
     NotFound:
       description: Not found

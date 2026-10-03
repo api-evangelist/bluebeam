@@ -75,13 +75,6 @@ paths:
                 $ref: '#/components/schemas/SessionUser'
 components:
   schemas:
-    SessionUserList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/SessionUser'
     SessionUser:
       type: object
       properties:
@@ -109,6 +102,13 @@ components:
         lastActiveAt:
           type: string
           format: date-time
+    SessionUserList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/SessionUser'
   securitySchemes:
     oauth2:
       type: oauth2
