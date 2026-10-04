@@ -61,6 +61,15 @@ paths:
                 $ref: '#/components/schemas/MarkupList'
 components:
   schemas:
+    MarkupList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Markup'
+        total:
+          type: integer
     Markup:
       type: object
       properties:
@@ -114,15 +123,6 @@ components:
               type: number
             height:
               type: number
-    MarkupList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Markup'
-        total:
-          type: integer
   securitySchemes:
     oauth2:
       type: oauth2
