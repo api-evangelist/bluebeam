@@ -126,6 +126,12 @@ apis:
   - type: Reference
     url: https://support.bluebeam.com/developer/studio-session-guide.html
 common:
+- type: Plans
+  url: plans/bluebeam-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/bluebeam-rate-limits.yml
+- type: FinOps
+  url: finops/bluebeam-finops.yml
 - type: AgenticAccess
   url: agentic-access/bluebeam-agentic-access.yml
 - type: DomainSecurity
