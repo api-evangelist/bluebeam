@@ -1,0 +1,28 @@
+# Front Door AI Index — bluebeam — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: bluebeam
+  lexicon_version: '1.0'
+  probed_at: '2026-09-25'
+  host: www.bluebeam.com
+  final_host: www.bluebeam.com
+  ownership: own
+  owner: bluebeam
+  shares_host_with: null
+  inherited_from: null
+  alias_of: null
+  verdict: scored
+  score: 9
+  band: 4
+  band_label: moderate
+  host_score: 9
+  density: 4.84
+  words: 1860
+  tiers:
+    agentic: 0
+    core: 9
+    model: 0
+  ambiguous: 0
+  top_terms:
+    AI: 9
