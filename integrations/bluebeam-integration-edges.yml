@@ -1,0 +1,1024 @@
+generated: '2026-10-14'
+method: searched
+checked:
+- https://integrations.bluebeam.com/
+- procore/integrations/procore-integration-edges.yml
+marketplace_apps:
+- marketplace: own
+  channel: partner-built
+  app: bluebeam
+  url: https://integrations.bluebeam.com/
+  app_count: 66
+  adapter: sweep-construction.py:wp-rest-apps
+  listed: 66
+  note: developer names only; identity from the listing's own outside link where it carries one
+edges:
+- partner_name: Buildertrend
+  app: Buildertrend Submittals & RFIs
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/buildertrend-submittals-rfis/
+  category: Construction Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Streamline Corp.
+  app: Streamline AI Takeoff – Division 8
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/streamline-ai-takeoff-division-8/
+  category: Construction Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Smartbyggai
+  app: Smartbyggai
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/smartbyggai/
+  category: Construction Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: MicroGenesis CADSoft Limited
+  app: MBEAM26
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/mbeam26/
+  category: Construction Management, Design Technology, Document Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Archidian
+  app: Archidian
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/archidian/
+  category: Permitting
+  partner_domain: archidian.ai
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: EPCPROMAN
+  app:  EPCPROMAN – BLUEBEAM Integration
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/epcproman-bluebeam-integration/
+  category: Construction Management, Document Management
+  partner_domain: epcproman.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Cloudpermit
+  app: Cloudpermit Bluebeam Integration
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/cloudpermit-bluebeam-integration/
+  category: Permitting
+  partner_domain: cloudpermit.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Asite Solutions Ltd
+  app: Asite – Bluebeam Integration
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/asite-bluebeam-integration/
+  category: Construction Management, Design Technology, Document Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: MarkedUp Inc.
+  app: MarkedUp + Bluebeam
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/markedup/
+  category: Design Technology
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Synthetic Dimension GmbH
+  app: Metaroom by Amrax
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/metaroom-by-amrax/
+  category: Design Technology, Document Management, PDF Creation
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Raken
+  app: Bluebeam and Raken
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/raken/
+  category: Construction Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: CityReporter
+  app: CityReporter Bluebeam Integration
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/cityreporter-bluebeam-integration/
+  category: Permitting
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Storm Consulting
+  app: PIDtoExcel
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/pidtoexcel/
+  category: PDF Creation
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: ELDAPRO Inc.
+  app: ELDAPRO + Bluebeam Studio Integration
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/eldapro/
+  category: Document Management, Permitting
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Tyler Technologies
+  app: Tyler Technologies – Enterprise Permitting & Licensing
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/tyler-technologies-enterprise-permitting-licensing/
+  category: Permitting
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: CityView
+  app: CityView
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/cityview/
+  category: Permitting
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Quickbase
+  app: Quickbase
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/quickbase/
+  category: Construction Management
+  partner_domain: quickbase.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Oracle
+  app: Oracle Primavera Unifier – Bluebeam integration
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/oracle-primavera-unifier/
+  category: Design Technology, Document Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: BidBow
+  app: BidBow + Bluebeam Takeoff to Estimate Integration
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/bidbow-bluebeam-takeoff/
+  category: Construction Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Kahua
+  app: Kahua File Management
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/kahua-file-management/
+  category: Construction Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Kahua
+  app: Kahua Document Management
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/kahua-document-management/
+  category: Document Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Wrench Solutions
+  app: Wrench-Bluebeam
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/wrench-bluebeam/
+  category: Design Technology
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Graphisoft
+  app: Bluebeam Studio Connection
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/bluebeam-studio-connection/
+  category: Design Technology
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Baseline Technologies
+  app: Baseline
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/baseline/
+  category: Permitting
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: DocuSign
+  app: DocuSign
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://integrations.bluebeam.com/apps/docusign/
+  category: Document Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: MarkupX Inc
+  app: MarkupX Pro
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/markupx-pro/
+  category: Design Technology
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Leica Geosystems
+  app: Leica iCON field software
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/leica-icon-build-site-trades-software/
+  category: Document Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: ProjectWise
+  app: ProjectWise
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://integrations.bluebeam.com/apps/projectwise/
+  category: Document Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Task Link
+  app: Task Link
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://integrations.bluebeam.com/apps/task-link/
+  category: Construction Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: The Davenport Group
+  app: Lama
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/lama/
+  category: Construction Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: PMWEB
+  app: PMWEB
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/pmweb/
+  category: Document Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: InEight
+  app: InEight Estimate Quantity Management
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/ineight-estimate-quantity-management/
+  category: Construction Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: evolveMEP
+  app: 360 Sync
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/360-sync/
+  category: Document Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Viva Civic
+  app: Viva Civic
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/viva-civic/
+  category: Permitting
+  partner_domain: vivacivic.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Granicus
+  app: Amanda
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/amanda/
+  category: Permitting
+  partner_domain: granicus.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Velosimo
+  app: Salesforce
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/salesforce/
+  category: Permitting
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Velosimo
+  app: Cityworks
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/cityworks/
+  category: Permitting
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Velosimo
+  app: Accela
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/accela/
+  category: Permitting
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: CityTech Solutions, Inc.
+  app: CityTech Permits
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/citytech-permits/
+  category: Permitting
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: iMS
+  app: iMS
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/ims/
+  category: Construction Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: iWorQ Systems
+  app: iWorQ Systems
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/iworq-systems/
+  category: Permitting
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Procore Documents
+  app: Procore Documents
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://integrations.bluebeam.com/apps/procore-documents/
+  category: Document Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: BS&A Software
+  app: BS&A Software
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/bsa-software/
+  category: Permitting
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: ColumbiaSoft
+  app: Document Locator Bluebeam Connector
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/document-locator-bluebeam-connector/
+  category: Permitting
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: OpenGov
+  app: OpenGov – Bluebeam Integration
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/opengov/
+  category: Permitting
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Oracle
+  app: Oracle Permitting and Licensing Electronic Plan Review
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/oraclepermitting/
+  category: Permitting
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Granicus
+  app: SmartGov
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/granicus/
+  category: Permitting
+  partner_domain: granicus.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Graitec
+  app: Graitec FILE SYNC
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/graitec/
+  category: Document Management
+  partner_domain: graitec.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: InEight
+  app: InEight Document Control
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/ineight-document-control/
+  category: Document Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Procore
+  app: Procore Submittals
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/procore-submittals/
+  category: Construction Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Vectorworks
+  app: Vectorworks
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/vectorworks/
+  category: Design Technology
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Clariti
+  app: Clariti
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/clariti/
+  category: Permitting
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Newforma
+  app: Newforma Project Center
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/newforma-project-center/
+  category: Design Technology
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Arkance
+  app: Autodesk Construction Cloud
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://integrations.bluebeam.com/apps/autodesk-construction-cloud/
+  category: Construction Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Egnyte
+  app: Egnyte
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://integrations.bluebeam.com/apps/egnyte/
+  category: Document Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Dropbox
+  app: Dropbox
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://integrations.bluebeam.com/apps/dropbox/
+  category: Document Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Box
+  app: Box
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://integrations.bluebeam.com/apps/box/
+  category: Document Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Microsoft OneDrive
+  app: Microsoft OneDrive
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://integrations.bluebeam.com/apps/microsoft-onedrive/
+  category: Document Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Microsoft SharePoint
+  app: Microsoft SharePoint
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://integrations.bluebeam.com/apps/microsoft-sharepoint/
+  category: Document Management
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Microsoft Outlook (Classic)
+  app: Microsoft Outlook (Classic)
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://integrations.bluebeam.com/apps/microsoft-outlook-classic/
+  category: PDF Creation
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Microsoft Powerpoint
+  app: Microsoft Powerpoint
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://integrations.bluebeam.com/apps/microsoft-powerpoint/
+  category: PDF Creation
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Microsoft Excel
+  app: Microsoft Excel
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://integrations.bluebeam.com/apps/microsoft-excel/
+  category: PDF Creation
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Microsoft Word
+  app: Microsoft Word
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://integrations.bluebeam.com/apps/microsoft-word/
+  category: PDF Creation
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Navisworks
+  app: Navisworks
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://integrations.bluebeam.com/apps/navisworks/
+  category: PDF Creation
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Revit
+  app: Revit
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://integrations.bluebeam.com/apps/revit/
+  category: PDF Creation
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: AutoCAD
+  app: AutoCAD
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://integrations.bluebeam.com/apps/autocad/
+  category: PDF Creation
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-14'
+- partner_name: Procore (own)
+  partner: procore
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.procore.com/apps/bluebeam-on-the-web
+  mirror_of: procore/integrations/procore-integration-edges.yml
+  apps:
+  - Bluebeam on the Web
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Document Management
+source:
+- procore/integrations/procore-integration-edges.yml
