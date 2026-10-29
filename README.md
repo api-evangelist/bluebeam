@@ -1,4 +1,4 @@
-# bluebeam (bluebeam)
+# Bluebeam
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,84 +66,150 @@
 
 Bluebeam develops smart, simple project efficiency and collaboration software for design and construction professionals worldwide, with its flagship Bluebeam Revu PDF markup and collaboration tool.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/apis.yml)
+**Areas:** Construction · PDF · Project Management · Documents
 
-## Timestamps
+## Bluebeam on APIs.io
 
-- **Modified:** 2026-05-19
+Everything profiled for Bluebeam is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bluebeam/](https://apis.io/providers/bluebeam/)** — or go straight to one of the APIs or properties below.
 
-## APIs
+### APIs (5)
 
-### Bluebeam Studio API
+- [Bluebeam Studio Prime Integration API](https://apis.io/apis/bluebeam/bluebeam-studio-prime-api/) — The Bluebeam Studio Prime Integration API leverages the Bluebeam Public API to enable third-party application integrations with Studio Prime. APIs support…
+- [bluebeam Documents API](https://apis.io/apis/bluebeam/bluebeam-documents-api/) — Document management within sessions
+- [bluebeam Markups API](https://apis.io/apis/bluebeam/bluebeam-markups-api/) — Markup and annotation access
+- [bluebeam Sessions API](https://apis.io/apis/bluebeam/bluebeam-sessions-api/) — Studio Session management
+- [bluebeam Users API](https://apis.io/apis/bluebeam/bluebeam-users-api/) — Session user management
 
-The Bluebeam Studio API enables programmatic access to Studio Sessions for document collaboration, markup management, and PDF review workflows. OAuth 2.0 REST APIs allow third-party applications to create and manage studio sessions, retrieve markup data, and integrate document annotations into AEC construction workflows.
+### Published properties
 
-- **Human URL:** [https://developers.bluebeam.com/](https://developers.bluebeam.com/)
-- **Base URL:** `https://api.bluebeam.com`
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-#### Tags
+#### Agentic access (1)
 
-- Collaboration
-- Construction
-- Drawing
-- Markup
-- PDF
-- Review
-- Studio
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Properties
+- [Bluebeam Agentic Access](https://apis.io/agentic-access/bluebeam/bluebeam-agentic-access/)
 
-- [Documentation](https://developers.bluebeam.com/)
-- [Getting Started](https://support.bluebeam.com/developer/getting-started-dev-portal.html)
-- [Authentication](https://support.bluebeam.com/developer/authentication-guide.html)
-- [Reference](https://support.bluebeam.com/developer/studio-session-guide.html)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/openapi/bluebeam-studio-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bluebeam-studio.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/bluebeam-studio.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### JSON Schema (1)
 
-### Bluebeam Studio Prime Integration API
+The data models the API reads and writes.
 
-The Bluebeam Studio Prime Integration API leverages the Bluebeam Public API to enable third-party application integrations with Studio Prime. APIs support programmatic access to project drawing sets, session management, and markup synchronization for construction project management platforms.
+- [Bluebeam Studio Session](https://apis.io/schemas/bluebeam/bluebeam-session/)
 
-- **Human URL:** [https://developers.bluebeam.com/](https://developers.bluebeam.com/)
-- **Base URL:** `https://api.bluebeam.com`
+#### JSON-LD (1)
 
-#### Tags
+Linked-data contexts for the provider's vocabulary.
 
-- Construction
-- Drawing
-- Markup
-- PDF
-- Project Management
-- Studio Prime
+- [Bluebeam Context](https://apis.io/jsonld/bluebeam/bluebeam-context/)
 
-#### Properties
+#### Collections (5)
 
-- [Documentation](https://support.bluebeam.com/integrations/develop-integrations.html)
-- [Getting Started](https://support.bluebeam.com/developer/getting-started-dev-portal.html)
-- [Authentication](https://support.bluebeam.com/developer/authentication-guide.html)
-- [Documentation](https://support.bluebeam.com/integrations/int-overview.html)
-- [Postman Collection](collections/bluebeam-studio.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/bluebeam-studio.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [Bluebeam Studio Documents API](https://apis.io/collections/bluebeam/open-bluebeam-documents-api/)
+- [Bluebeam Studio Documents Markups API](https://apis.io/collections/bluebeam/open-bluebeam-markups-api/)
+- [Bluebeam Studio Documents Sessions API](https://apis.io/collections/bluebeam/open-bluebeam-sessions-api/)
+- [Bluebeam Studio API](https://apis.io/collections/bluebeam/open-bluebeam-studio/)
+- [Bluebeam Studio Documents Users API](https://apis.io/collections/bluebeam/open-bluebeam-users-api/)
 
-- [GitHub Organization](https://github.com/Bluebeam)
-- [LinkedIn](https://www.linkedin.com/company/bluebeam-software)
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Bluebeam — jsonschema rules](https://apis.io/rules/bluebeam/bluebeam-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Bluebeam Authentication](https://apis.io/security/bluebeam/bluebeam-authentication/)
+- [Bluebeam Domain Security](https://apis.io/security/bluebeam/bluebeam-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Bluebeam Scopes](https://apis.io/scopes/bluebeam/bluebeam-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Bluebeam Plans Pricing](https://apis.io/plans/bluebeam/bluebeam-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Bluebeam Rate Limits](https://apis.io/rate-limits/bluebeam/bluebeam-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Bluebeam Finops](https://apis.io/finops/bluebeam/bluebeam-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.bluebeam.com)
-- [Portal](https://developers.bluebeam.com/)
 - [Documentation](https://support.bluebeam.com/integrations/develop-integrations.html)
-- [Getting Started](https://support.bluebeam.com/developer/getting-started-dev-portal.html)
-- [Authentication](https://support.bluebeam.com/developer/authentication-guide.html)
-- [Status Page](https://status.bluebeam.com/)
-- [Blog](https://blog.bluebeam.com/)
+- [Getting started](https://support.bluebeam.com/developer/getting-started-dev-portal.html)
 - [Support](https://community.bluebeam.com/)
-- [Documentation](https://support.bluebeam.com/integrations/integrations-hub.html)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/openapi/bluebeam-studio-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-schema/bluebeam-session-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [J S O N L D Context](https://raw.githubusercontent.com/api-evangelist/bluebeam/refs/heads/main/json-ld/bluebeam-context.jsonld)
-- [Integrations](https://www.bluebeam.com/product/integrations/)
+- [Blog](https://blog.bluebeam.com/)
+- [GitHub](https://github.com/Bluebeam)
+- [Status](https://status.bluebeam.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**Email:** kin@apievangelist.com
+**Kin Score 34.9** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 53.5 |
+| Contract governance | 9.8 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 47.6 |
+| Access clarity | 7.9 |
+
+**Agent readiness 22.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 26.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bluebeam/](https://apis.io/providers/bluebeam/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Bluebeam: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bluebeam/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
